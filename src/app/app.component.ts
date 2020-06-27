@@ -16,11 +16,11 @@ export class AppComponent {
   constructor(private toastr : ToastrService){}
 
   handleClick(itemNumber:number){
-    this.count = this.count+1;
     if(this.winMessage){
       return this.toastr.success(this.winMessage);
     }
     if(this.itemArray[itemNumber] === 'empty'){
+      this.count = this.count+1;
       this.itemArray[itemNumber] = this.isCross ? 'cross' : 'circle';
       this.isCross = !this.isCross;
     }
